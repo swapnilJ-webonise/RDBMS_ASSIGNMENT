@@ -1,0 +1,3 @@
+# RDBMS_ASSIGNMENT day2
+RDBMS ASSIGNMENT PART-2
+Stored Procedures queries
