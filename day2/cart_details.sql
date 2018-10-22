@@ -1,11 +1,30 @@
- CREATE TABLE cart_details (id INT PRIMARY KEY);
+ CREATE TABLE cart_details
+  (
+     user_id    INT,
+     variant_id INT,
+     FOREIGN KEY (variant_id) REFERENCES variants(id),
+     FOREIGN KEY (user_id) REFERENCES users(id)
+  );
 
-ALTER TABLE variant ADD CONSTRAINT FOREIGN KEY (cart_id) REFERENCES cart_details(id);
+INSERT INTO cart_details
+VALUES     (511,
+            423);
 
-INSERT INTO cart_details VALUES(321,2020);
-INSERT INTO cart_details VALUES(322,2030);
-INSERT INTO cart_details VALUES(323,2010);
-INSERT INTO cart_details VALUES(324,2010);
-INSERT INTO cart_details VALUES(325,2050);
+INSERT INTO cart_details
+VALUES     (512,
+            422);
 
-select * from cart_details;
+INSERT INTO cart_details
+VALUES     (513,
+            424);
+
+INSERT INTO cart_details
+VALUES     (515,
+            425);
+
+INSERT INTO cart_details
+VALUES     (514,
+            421);
+
+SELECT *
+FROM   cart_details;  

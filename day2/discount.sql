@@ -1,9 +1,20 @@
-CREATE TABLE discount( 
-id INT PRIMARY KEY, 
-discount_value INT );
+ CREATE TABLE discounts
+  (
+     id              VARCHAR(20) PRIMARY KEY,
+     discounts_value INT
+  );
 
-INSERT INTO discount VALUES("coup-01",20);
-INSERT INTO discount VALUES("coup-02",30);
-INSERT INTO discount VALUES("coup-03",25)
+INSERT INTO discounts
+VALUES     ("coup-01",
+            20);
 
-SELECT * FROM discount;
+INSERT INTO discounts
+VALUES     ("coup-02",
+            30);
+
+INSERT INTO discounts
+VALUES     ("coup-03",
+            25);
+
+SELECT *
+FROM   discounts;  

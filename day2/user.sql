@@ -1,30 +1,56 @@
-CREATE DATABASE rdbms_assignment_Day2;
-use rdbms_assignment_Day2;
+CREATE DATABASE rdbms_assignment_day_02;
 
-CREATE TABLE user_type ( 
-id INT PRIMARY KEY, 
-user_type varchar(20) 
-);
+USE rdbms_assignment_day_02;
+
+CREATE TABLE users_type
+  (
+     id         INT PRIMARY KEY,
+     users_type VARCHAR(20)
+  );
+
+INSERT INTO users_type
+VALUES      (1,
+             "buyer");
+
+INSERT INTO users_type
+VALUES      (2,
+             "inventory manager");
+
+CREATE TABLE users
+  (
+     id            INT PRIMARY KEY,
+     uname         VARCHAR(20),
+     email         VARCHAR(30),
+     password 		 INT,
+     users_type_id INT,
+     FOREIGN KEY (users_type_id) REFERENCES users_type(id)
+  );
 
 
+INSERT INTO users
+VALUES      (512,
+             "sam",
+             "sam@gmail.com",
+             123498765,
+             2);
 
-INSERT INTO user_type VALUES (1,"buyer");
-INSERT INTO user_type VALUES (2,"inventory manager");
+INSERT INTO users
+VALUES      (513,
+             "jack",
+             "jack@gmail.com",
+             12345678,             
+             1);
 
-CREATE TABLE user (
-    -> id INT PRIMARY KEY,
-    -> uname VARCHAR(20),
-    -> email VARCHAR(30),
-    -> user_type_id INT,
-    -> FOREIGN KEY (user_type_id) REFERENCES user_type(id)
-    -> );
+INSERT INTO users
+VALUES      (514,
+             "lisa",
+             "lisa@gmail.com",
+             12340000,             
+             2);
 
-
-
-INSERT INTO user VALUES (511,"swapnil","swapnil@gmail.com",1);
-INSERT INTO user VALUES (512,"SAM","sam@gmail.com",2);
-INSERT INTO user VALUES (513,"JACK","jack@gmail.com",1);
-INSERT INTO user VALUES (514,"LISA","lisa@gmail.com",2);
-INSERT INTO user VALUES (515,"ROSS","ross@gmail.com",1);
-
-
+INSERT INTO users
+VALUES      (515,
+             "ross",
+             "ross@gmail.com",
+             12341234,             
+             1);  

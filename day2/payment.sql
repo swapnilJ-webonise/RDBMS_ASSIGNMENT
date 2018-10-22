@@ -1,8 +1,12 @@
-CREATE TABLE payment ( 
-id INT PRIMARY KEY, 
-payment_method VARCHAR(20), 
-payment_status VARCHAR(30), 
-cart_id INT, 
-discount_id VARCHAR(20), 
-FOREIGN KEY (cart_id) REFERENCES cart_details(id), 
-FOREIGN KEY (discount_id) REFERENCES discount(id) );
+ CREATE TABLE payments
+  (
+     id              INT PRIMARY KEY,
+     payments_method VARCHAR(20),
+     payments_status VARCHAR(30),
+     user_id         INT,
+     discount_id     VARCHAR(20),
+     FOREIGN KEY (user_id) REFERENCES users(id),
+     FOREIGN KEY (discount_id) REFERENCES discounts(id)
+  );
+
+

@@ -1,17 +1,48 @@
-CREATE TABLE variant( 
-id INT PRIMARY KEY, 
-product_id INT, 
-color VARCHAR(20), 
-price DOUBLE (7,3), 
-size VARCHAR(20), 
-cart_id INT, 
-FOREIGN KEY (product_id) REFERENCES product(id),
-FOREIGN KEY (cart_id) REFERENCES cart_details(id)
- );
+ CREATE TABLE variants
+  (
+     id         INT PRIMARY KEY,
+     product_id INT,
+     color      VARCHAR(20),
+     price      DOUBLE (7, 3),
+     size       VARCHAR(20),
+     FOREIGN KEY (product_id) REFERENCES products(id)
+  );
 
+INSERT INTO variants
+VALUES      (421,
+             2030,
+             "red",
+             499.89,
+             "medium");
 
-INSERT INTO variant VALUES (421, 2030,"RED",499.89,"MEDIUM",322);
-INSERT INTO variant VALUES (422, 2010,"BLACK",599.89,"MEDIUM",323);
-INSERT INTO variant VALUES (423, 2040,"BLUE",389.89,"SMALL",321);
-INSERT INTO variant VALUES (424, 2020,"PINK",399.89,"SMALL",325);
-INSERT INTO variant VALUES (425, 2050,"WHITE",1229.89,"LARGE",324);
+INSERT INTO variants
+VALUES      (422,
+             2010,
+             "black",
+             599.89,
+             "medium");
+
+INSERT INTO variants
+VALUES      (423,
+             2040,
+             "blue",
+             389.89,
+             "small");
+
+INSERT INTO variants
+VALUES      (424,
+             2020,
+             "pink",
+             399.89,
+             "small");
+
+INSERT INTO variants
+VALUES      (425,
+             2050,
+             "white",
+             1229.89,
+             "large");  
+             
+             
+SELECT * 
+FROM variants;
